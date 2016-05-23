@@ -13,7 +13,7 @@ import items.equipStock;
 import items.potionStock;
 
 public class HfengScreen extends Screen implements KeyListener {
-	
+	//Testing from PC 
 	ArrayList<Merchant> listOfMerchant = new ArrayList<Merchant>();
 	ArrayList<Item> storeInventory_Kathy = new ArrayList<Item>();
 	ArrayList<Item> storeInventory_Rebecca = new ArrayList<Item>();
