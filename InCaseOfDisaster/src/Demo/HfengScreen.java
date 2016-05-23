@@ -67,6 +67,8 @@ public class HfengScreen extends Screen implements KeyListener {
 	public static boolean RUN_ARROW_KEYS = false;
 	public static boolean RUN_ESC = false;
 	public static boolean RUN_NUMBERS = false;
+	public static boolean RUN_B = true;
+	public static boolean RUN_S = true;
 	
 	//
 	public static boolean ERROR_MONEY = false;
@@ -145,6 +147,7 @@ public class HfengScreen extends Screen implements KeyListener {
 				g2.drawString("Press [S] to sell your items.", x, y);
 				y-= 75;
 				if(BUY_MENU == true){
+					RUN_S = false;
 					RUN_NUMBERS = true;
 					g2.setColor(Color.white);
 					g2.fillRect(0, 0, width, height);
@@ -277,6 +280,7 @@ public class HfengScreen extends Screen implements KeyListener {
 					}
 				}
 				if(SELL_MENU == true){
+					RUN_B = false;
 					if(playerInventory.size() > 0){
 						RUN_NUMBERS = true;
 					}
@@ -809,6 +813,8 @@ public class HfengScreen extends Screen implements KeyListener {
 			BUY_MENU = false;
 			SELL_WARNING = false;
 			SELL_MENU = false;
+			RUN_B = true;
+			RUN_S = true;
 			START = 1;
 			END = 9;
 			CURRENT_PAGE = 1;
@@ -946,13 +952,15 @@ public class HfengScreen extends Screen implements KeyListener {
 				game.repaint();
 			}	
 		}
-		if(e.getKeyCode() == STORE_BUY){
+		if(e.getKeyCode() == STORE_BUY && RUN_B == true){
 			BUY_MENU = true;
+			RUN_S = false;
 			update();
 			game.repaint();
 		}
-		if(e.getKeyCode() == STORE_SELL){
+		if(e.getKeyCode() == STORE_SELL && RUN_S == true){
 			SELL_MENU = true;
+			RUN_B = false;
 			update();
 			game.repaint();
 		}
