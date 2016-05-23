@@ -72,7 +72,7 @@ public class HfengScreen extends Screen implements KeyListener {
 	public static boolean ERROR_MONEY = false;
 	public static int PLAYER_WEALTH = 1000000;
 	
-	// Display Item Variables
+	// Item Display Variables
 	public static int ITEM_NUMBER = 0;
 	public static int CURRENT_PAGE = 1;
 	public static int START = 1;
@@ -241,7 +241,6 @@ public class HfengScreen extends Screen implements KeyListener {
 						RUN_ARROW_KEYS = false;
 						RUN_ESC = false;
 						if(ITEM_NUMBER <= storeInventory_Kathy.size()){
-							//RUN_BUY = true;
 							g2.setColor(TRANSPARENT_BUY_MENU);
 							g2.fillRect(0, 0, width, height);
 							g2.setColor(GOLD);
